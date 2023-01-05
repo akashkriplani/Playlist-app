@@ -13,8 +13,13 @@ const songsSlice = createSlice({
       // action.payload will be the name of the song which needs to be removed, ergo, a string.
       const index = state.indexOf(action.payload);
       state.splice(index, 1);
-    },
+    }
   },
+  extraReducers(builder) {
+    builder.addCase('movie/reset', (state, action) => {
+      return [];
+    })
+  }
 });
 
 const moviesSlice = createSlice({
